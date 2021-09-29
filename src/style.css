@@ -43,7 +43,7 @@ li:first-letter {
 
   border-radius: 10px;
   box-shadow: 6px 2px 8px rgba(0, 0, 0, 0.2);
-  background-color: white;
+  background-color: #fffefa;
 }
 
 .overview {
@@ -99,9 +99,41 @@ small {
   align: center;
 }
 
+.current-location {
+  background-color: #f150a3;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  border: solid;
+  border-color: #f150a3;
+  width: 75px;
+}
+
+.current-location:hover{
+
+ background-color: white;
+  color: #f150a3;
+  padding: 7px;
+  border-radius: 10px;
+  border: solid;
+  border-color: #f150a3;
+  transition-duration: 250ms;s
+
+}
+
+
+.forecast-title {
+  color: #010142;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: -25px;
+  margin-top: 25px;
+}
+
 .weather-forecast {
   margin-top: 20px;
-  text-align: center;
 }
 
 .weather-forecast-date {
