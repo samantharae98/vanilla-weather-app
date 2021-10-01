@@ -78,6 +78,7 @@ function getForecast(coordinates) {
 }
 
 function displayTemperature(response) {
+  celsiusTemp = response.data.main.temp;
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -103,19 +104,38 @@ function displayTemperature(response) {
   getForecast(response.data.coord);
 }
 
-function search(city) {
+function searchCity(city) {
   let apiKey = "53a5399d05cd6183c0c1185c64d7a560";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q= ${city}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayTemperature);
+  axios.get(`${apiUrl}`).then(displayTemperature);
 }
 
-function handleSubmit(event) {
+function submit(event) {
   event.preventDefault();
-  let cityInputElement = document.querySelector("#city-input");
-  search(cityInputElement.value);
+  let cityElement = document.querySelector("#city-input");
+  searchCity(cityElement.value);
+}
+function searchCurrent(position) {
+  let apiKey = "53a5399d05cd6183c0c1185c64d7a560";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+
+  axios.get(apiUrl).then(currentWeather);
 }
 
-function getCurrentPosition(event) {
+function getCurrent(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrent);
+}
+
+let currentButton = document.querySelector("#current-button");
+currentButton.addEventListener("click", getCurrent);
+
+searchCity("Miami");
+
+let search = document.querySelector("#search-form");
+search.addEventListener("submit", submit);
+
+function getCurrent(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
@@ -140,4 +160,4 @@ form.addEventListener("submit", handleSubmit);
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-search("New York");
+searchCity("New York");
