@@ -5,12 +5,12 @@ body {
 }
 h1 {
   color: #010142;
-  font-size: 45px;
+  font-size: 60px;
   font-weight: 300px;
   line-height: 28px;
   font-family: "Poppins", sans-serif;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 ul {
@@ -24,9 +24,9 @@ li {
   padding: 0;
 
   color: #43ada2;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 24px;
 }
 
 li:first-letter {
@@ -89,6 +89,25 @@ a {
   transition-duration: 250ms;
 }
 
+.btn-btn {
+  background-color: #f150a3;
+  color: white;
+  padding: 7px;
+  border-radius: 10px;
+  border: solid;
+  border-color: #f150a3;
+}
+
+.btn-btn:hover {
+  background-color: white;
+  color: #f150a3;
+  padding: 7px;
+  border-radius: 10px;
+  border: solid;
+  border-color: #f150a3;
+  transition-duration: 250ms;
+}
+
 .form-control {
   border: solid;
   border-color: #f150a3;
@@ -102,6 +121,15 @@ small {
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
+}
+
+.forecast-title {
+  color: #010142;
+  font-size: 30px;
+  font-weight: 300px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin: 0 auto;
 }
 
 .weather-forecast-date {

@@ -1,15 +1,17 @@
 function formatDate(timestamp) {
-  //calculate the date
   let date = new Date(timestamp);
+  let currentTime = "AM";
+
   let hours = date.getHours();
-  if (hours < 10) {
-    minutes = `0${minutes}`;
+  if (hours > 12) {
+    hours = hours - 12;
+    currentTime = "PM";
   }
+
   let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
   let days = [
     "Sunday",
     "Monday",
@@ -19,8 +21,27 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+
+  let months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  let currentMonth = months[date.getMonth()];
+  let currentDate = date.getDate();
+  let currentYear = date.getFullYear();
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${hours}:${minutes} ${currentTime} <br> ${currentMonth} ${currentDate}, ${currentYear}`;
 }
 
 function formatDay(timestamp) {
@@ -42,7 +63,7 @@ function displayForecast(response) {
       forecastHTML =
         forecastHTML +
         `
-    <div class="col-2">
+    <div class="col-2"> 
       <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
     
       <img
@@ -55,7 +76,7 @@ function displayForecast(response) {
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperature-max">${Math.round(
           forecastDay.temp.max
-        )}°</span>
+        )}° |</span>
         <span class="weather-forecast-temperature-min">${Math.round(
           forecastDay.temp.min
         )}°</span>
