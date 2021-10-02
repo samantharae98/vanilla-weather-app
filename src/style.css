@@ -40,15 +40,17 @@ li:first-letter {
 }
 .image {
   background-color: #ffcbe6;
-
   padding: 20px;
   border-radius: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-left: 135px;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+}
+.humidity-wind-description {
+  margin-left: 145px;
 }
 .weather-app {
   padding: 40px;
-
   border-radius: 10px;
   box-shadow: 6px 2px 8px rgba(0, 0, 0, 0.2);
   background-color: white;
@@ -62,6 +64,7 @@ li:first-letter {
   font-size: 25px;
   font-weight: 500;
   margin-bottom: 10px;
+  margin-left: 145px;
 }
 .overview {
   margin-bottom: 20px;
@@ -76,6 +79,8 @@ a {
   font-size: 70px;
   font-weight: 700;
   line-height: 1;
+  margin-left: 160px;
+  position: relative;
 }
 
 .float-left {
