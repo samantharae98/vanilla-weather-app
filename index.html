@@ -26,57 +26,58 @@
       <div class="weather-app-wrapper">
         <div class="weather-app">
           <div class="overview">
+            <form id="search-form" class="mt-3">
+              <div class="row-3">
+                <div class="col">
+                  <div class="row">
+                    <input
+                      type="search"
+                      placeholder="Enter city"
+                      class="form-control"
+                      id="city-input"
+                      autocomplete="off"
+                    />
+
+                    <input
+                      type="submit"
+                      value="Search"
+                      class="search-button"
+                    /><button class="btn-btn" id="current-location-button">
+                      Current
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
             <h1 id="city"></h1>
             <ul>
-              <li>Last updated: <span id="date"></span></li>
-              <li id="description"></li>
+              <li><span class="current-date" id="date"></span></li>
             </ul>
           </div>
 
           <div class="row">
-            <div class="col-6">
+            <div class="col">
               <div class="clearfix weather-temperature">
-                <div class="float-left">
+                <div class="float-left" >
                   <strong id="temperature"></strong
                   ><span class="units"> <a id="fahrenheit-link">°F</a></span>
                 </div>
-                <img src="" alt="Rain" id="icon" class="float-left" />
-                <form id="search-form" class="mt-3">
-                  <div class="row-4">
-                    <div class="col-9">
-                      <div class="col-12">
-                        <input
-                          type="search"
-                          placeholder="Enter city"
-                          class="form-control"
-                          id="city-input"
-                          autocomplete="off"
-                        />
-
-                        <input
-                          type="submit"
-                          value="Search"
-                          class="search-button"
-                        /><button class="btn-btn" id="current-location-button">
-                          Current
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
+                <img src="" alt="Rain" id="icon" class="image" />
+                <ul>
+                  <li class="current-description" id="description"></li>
+                </ul>
+                <ul>
+                  <li>Humidity: <span id="humidity"></span> %</li>
+                  <li>Wind: <span id="wind"></span> mph</li>
+                </ul>
               </div>
-            </div>
 
-            <div class="col-6">
-              <ul>
-                <li>Humidity: <span id="humidity"></span> %</li>
-                <li>Wind: <span id="wind"></span> m/h</li>
-              </ul>
+              <div class="forecast-title">Weekly Forecast</div>
+              <div class="weather-forecast" id="forecast"></div>
             </div>
           </div>
-          <div class="forecast-title">Weekly Forecast</div>
-          <div class="weather-forecast" id="forecast"></div>
         </div>
+
         <small>
           <a
             href="https://github.com/samantharae98/vanilla-weather-app"
