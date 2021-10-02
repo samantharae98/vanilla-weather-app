@@ -3,6 +3,11 @@ function formatDate(timestamp) {
   let currentTime = "AM";
 
   let hours = date.getHours();
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> parent of 64b9fed (Update app.js)
   if (hours > 12) {
     hours = hours - 12;
     currentTime = "PM";
