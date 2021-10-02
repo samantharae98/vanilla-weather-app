@@ -4,7 +4,6 @@ function formatDate(timestamp) {
 
   let hours = date.getHours();
 
-
   if (hours > 12) {
     hours = hours - 12;
     currentTime = "PM";
